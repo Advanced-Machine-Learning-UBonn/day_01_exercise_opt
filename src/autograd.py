@@ -1,6 +1,6 @@
 """This module should provide autograd functionality."""
 
-import math
+# import math
 
 
 class ADiffFloat(object):
@@ -69,7 +69,6 @@ class ADiffFloat(object):
 
     def sigmoid(self):
         """Implement backprop through a sigmoid function."""
-
         # TODO: Update the line below.
         result = ADiffFloat(0.0)
         # Remember the definition of the sigmoidal function:
