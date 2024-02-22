@@ -80,7 +80,7 @@ def test_sigmoid_activation(pos) -> None:
     assert np.allclose(adf.partial, diff_quot, atol=h)
 
 
-@pytest.mark.parametrize("pos", (-1.0, 0.0, 1.0, 2.0))
+@pytest.mark.parametrize("pos", (-2.0, -1.0, 0.0, 1.0, 2.0))
 def test_relu_activation(pos) -> None:
     """Check backprop through a relu and additional ops."""
     h = 1e-6
