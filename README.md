@@ -5,6 +5,8 @@ This exercise studies the implementation of an Algorithmic differentiation engin
 Python supports overloading plus (+) and times (*) via the magic methods `__add__` and `__mul__`. Both are vital for this project.
 Navigate to the `src` folder. `TODO`s mark parts of the code that require your attention.
 
+Run `nox -s test` to check your code. If all checks pass move on to the `src/fit_neuron.py` module. Resolve all `TODO`s.
+
 
 ### Further reading:
 - Andreas Griewank, Andrea Walther, Evaluating Derivatives

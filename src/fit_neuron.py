@@ -10,23 +10,15 @@ def net(params, x):
     """Evaluate a small neural network."""
     hidden_weights, hidden_biases, out_weights, out_biases = params
 
-    hidden = []
-    for x_mini_batch in x:
-        y = []
-        for neuron, bias in zip(hidden_weights, hidden_biases):
-            y.append(
-                sum((n * xel for n, xel in zip(neuron, x_mini_batch)), bias).relu()
-            )
-        hidden.append(y)
+    res = ADiffFloat(0)
 
-    res = []
-    for h_mini_batch in hidden:
-        y = []
-        for neuron, bias in zip(out_weights, out_biases):
-            y.append(
-                sum((n * hel for n, hel in zip(neuron, h_mini_batch)), bias).relu()
-            )
-        res.append(y)
+    # TODO: run x through a hidden layer and an output layer.
+    # Layers use the equation,
+    # f(w^T x + b) .
+    # Use element-wise products (*) and python's sum function
+    # to compute the dot product (w^T x).
+    # You will require two for loops, a first for the batch dimension and 
+    # a second which loops over the individual neurons weights and biases.
 
     return res
 
@@ -97,21 +89,9 @@ if __name__ == "__main__":
             print(f"e: {e:02.0f}, it: {i:02.0f}, cost value {cost.value:02.6f}")
 
             # update
-            hidden_weights = [
-                list(map(lambda f: ADiffFloat(f.value - lr * f.partial), neurons))
-                for neurons in hidden_weights
-            ]
-            hidden_biases = list(
-                map(lambda f: ADiffFloat(f.value - lr * f.partial), hidden_biases)
-            )
-
-            out_weights = [
-                list(map(lambda f: ADiffFloat(f.value - lr * f.partial), neurons))
-                for neurons in out_weights
-            ]
-            out_biases = list(
-                map(lambda f: ADiffFloat(f.value - lr * f.partial), out_biases)
-            )
+            # TODO: Update all weights via gradient descent.
+            # You need to subtract the product of learning-rate (lr) and partial
+            # from every weight value.
 
     # testing...
     x_test = dataset[0][test_indices, :]
