@@ -33,53 +33,53 @@ class ADiffFloat(object):
     def __add__(self, other):
         """Overloads the plus (+) operator."""
         other = self.wrap_other(other)
-        result = ADiffFloat(self.value + other.value)
 
-        def _backward(seed=1.0):
-            self.backward(seed)
-            other.backward(seed)
-
-        result.backward = _backward
+        # TODO: Replace the line below.
+        result = ADiffFloat(0.)
+        # TODO: Implement the addition of the two floats self and other.
+        # Set the self.backbard function
+        # of the result such that both summands
+        # end up with derivative information.
 
         return result
 
     def __mul__(self, other):
         """Overloads the multiplication (*) operator."""
         other = self.wrap_other(other)
-        result = ADiffFloat(self.value * other.value)
 
-        def _backward(seed=1.0):
-            self.backward(other.value * seed)
-            other.backward(self.value * seed)
+        # TODO: Replace the line below.
+        result = ADiffFloat(0.)
+        # TODO: Implement multiplication of the two floats self and other.
+        # Set the self.backbard function
+        # of the result such that gradient information 
+        # is backpropagated into both factors.
 
-        result.backward = _backward
         return result
 
     def relu(self):
         """Implement backprop through a relu."""
-        result = ADiffFloat(self.value if self.value > 0 else 0.0)
+        # TODO: Implement a relu forward pass below.
+        # remeber relu(x) equals x if x > 0 else 0.
+        result = ADiffFloat(0.)
 
-        def _backward(seed=1.0):
-            self.backward((self.value > 0) * seed)
-
-        result.backward = _backward
+        # TODO: Set the backward function.
+        # Relus propagate gradient information if their value is > 0.
+        
         return result
 
     def sigmoid(self):
         """Implement backprop through a sigmoid function."""
 
-        def _sig(x):
-            return 1.0 / (1 + math.exp(-x))
+        # TODO: Update the line below.
+        result = ADiffFloat(0.)
+        # Remember the definition of the sigmoidal function:
+        # sig(x) = 1.0 / (1 + exp(-x))
+        
 
-        def _dsig(x):
-            return _sig(x) * (1 - _sig(x))
+        # TODO: Set the backprop function correctly.
+        # HINT: sig'(x) = sig(x) * (1 - _sig(x))
+        # Remember to apply the chain rule.
 
-        result = ADiffFloat(_sig(self.value))
-
-        def _backward(seed=1.0):
-            self.backward(_dsig(self.value) * seed)
-
-        result.backward = _backward
         return result
 
     def __repr__(self):
