@@ -10,9 +10,9 @@ Navigate to the `src` folder. `TODO`s mark parts of the code that require your a
 - Andreas Griewank, Andrea Walther, Evaluating Derivatives
     - ( https://bonnus.ulb.uni-bonn.de/permalink/49HBZ_ULB/sol2rl/alma991037247969706467 )
 
-- Overloading example:
+- Autograd via operator overloading:
     - https://github.com/karpathy/micrograd
 
-- Source Transformation examples:
+- Autograd via source transformation:
     - https://github.com/mattjj/autodidact/tree/master
     - https://jax.readthedocs.io/en/latest/autodidax.html
