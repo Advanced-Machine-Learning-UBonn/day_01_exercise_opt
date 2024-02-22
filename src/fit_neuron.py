@@ -17,7 +17,7 @@ def net(params, x):
     # f(w^T x + b) .
     # Use element-wise products (*) and python's sum function
     # to compute the dot product (w^T x).
-    # You will require two for loops, a first for the batch dimension and 
+    # You will require two for loops, a first for the batch dimension and
     # a second which loops over the individual neurons weights and biases.
 
     return res

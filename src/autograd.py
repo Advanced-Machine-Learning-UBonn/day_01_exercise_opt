@@ -35,7 +35,7 @@ class ADiffFloat(object):
         other = self.wrap_other(other)
 
         # TODO: Replace the line below.
-        result = ADiffFloat(0.)
+        result = ADiffFloat(0.0)
         # TODO: Implement the addition of the two floats self and other.
         # Set the self.backbard function
         # of the result such that both summands
@@ -48,10 +48,10 @@ class ADiffFloat(object):
         other = self.wrap_other(other)
 
         # TODO: Replace the line below.
-        result = ADiffFloat(0.)
+        result = ADiffFloat(0.0)
         # TODO: Implement multiplication of the two floats self and other.
         # Set the self.backbard function
-        # of the result such that gradient information 
+        # of the result such that gradient information
         # is backpropagated into both factors.
 
         return result
@@ -60,21 +60,20 @@ class ADiffFloat(object):
         """Implement backprop through a relu."""
         # TODO: Implement a relu forward pass below.
         # remeber relu(x) equals x if x > 0 else 0.
-        result = ADiffFloat(0.)
+        result = ADiffFloat(0.0)
 
         # TODO: Set the backward function.
         # Relus propagate gradient information if their value is > 0.
-        
+
         return result
 
     def sigmoid(self):
         """Implement backprop through a sigmoid function."""
 
         # TODO: Update the line below.
-        result = ADiffFloat(0.)
+        result = ADiffFloat(0.0)
         # Remember the definition of the sigmoidal function:
         # sig(x) = 1.0 / (1 + exp(-x))
-        
 
         # TODO: Set the backprop function correctly.
         # HINT: sig'(x) = sig(x) * (1 - _sig(x))
