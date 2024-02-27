@@ -45,7 +45,7 @@ $$
    \end{align}
 $$
 
-### Further reading:
+### Optional further reading:
 - Andreas Griewank, Andrea Walther, Evaluating Derivatives
     - ( https://bonnus.ulb.uni-bonn.de/permalink/49HBZ_ULB/sol2rl/alma991037247969706467 )
 
