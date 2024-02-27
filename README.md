@@ -12,7 +12,7 @@ $$
     \delta x_j = \sum_i \frac{\partial y_i}{\partial x_j} \delta y_i.
 $$
 
-$ \frac{\partial y_i}{\partial x_j} $ can be a chain of multiple elemental operations.
+$\frac{\partial y_i}{\partial x_j}$ can be a chain of multiple elemental operations.
 
 When overloading `__add__` please consider,
 
