@@ -12,6 +12,8 @@ $$
     \delta x_j = \sum_i \frac{\partial y_i}{\partial x_j} \delta y_i.
 $$
 
+$ \frac{\partial y_i}{\partial x_j} $ can be a chain of multiple elemental operations.
+
 When overloading `__add__` please consider,
 
 $$
@@ -53,3 +55,6 @@ $$
 - Autograd via source transformation:
     - https://github.com/mattjj/autodidact/tree/master
     - https://jax.readthedocs.io/en/latest/autodidax.html
+
+- Wikipedia's article on Automatic Differentiation
+    - https://en.wikipedia.org/wiki/Automatic_differentiation
