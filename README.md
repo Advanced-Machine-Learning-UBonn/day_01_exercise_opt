@@ -7,11 +7,13 @@ Navigate to the `src` folder. `TODO`s mark parts of the code that require your a
 
 Run `nox -s test` to check your code. If all checks pass move on to the `src/fit_neuron.py` module. Resolve all `TODO`s.
 To do so recall that the multivariate chain rule requires as to sum up contributions from each path. More formally for an input $x_j$ we compute,
+
 $$
     \delta x_j = \sum_i \frac{\partial y_i}{\partial x_j} \delta y_i.
 $$
 
 When overloading `__add__` please consider,
+
 $$
     \begin{align}
         y = x_1 + x_2 & \\ 
@@ -19,9 +21,11 @@ $$
         & \rightarrow \delta x_2 = \frac{\partial (x_1 + x_2)}{\partial x_2} \cdot \delta y = 1 \cdot \delta y ,
     \end{align}
 $$
+
 with $\delta y$ as the inner derivative or seed value.
 
 When overloading `__mul__` please consider,
+
 $$
     \begin{align}
         y = x_1 \cdot x_2 & \\ 
@@ -31,6 +35,7 @@ $$
 $$
 
 Finally for element-wise functions
+
 $$
    \begin{align}
         y = f(x) & \\
