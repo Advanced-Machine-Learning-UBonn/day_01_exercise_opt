@@ -42,6 +42,20 @@ def test_mul() -> None:
     assert np.allclose(x.partial, -1.0) and np.allclose(y.partial, 1.0)
 
 
+def test_example():
+    x1 = ADiffFloat(-1.0)
+    x2 = ADiffFloat(1.0)
+    
+    y = (x1*x2).sigmoid() + x1*x2
+
+    y.backward()
+
+    def dsigdx(x):
+        return _sigmoid(x)*(1 - _sigmoid(x))
+
+    assert np.allclose(x2.partial, dsigdx(x1.value*x2.value)*x1.value + x1.value)
+    assert np.allclose(x1.partial, dsigdx(x1.value*x2.value)*x2.value + x2.value)
+
 def test_auto_diff() -> None:
     """See if expressions mixing add and mul work properly."""
     x = ADiffFloat(2.0)
