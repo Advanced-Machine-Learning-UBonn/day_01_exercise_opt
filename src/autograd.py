@@ -8,7 +8,8 @@ class ADiffFloat(object):
 
     def _backward(self, seed=1.0):
         """Run a default backward function at the end of each path."""
-        self.partial += seed
+        # Paths end here. TODO: Sum up contributions.
+        self.partial += 0.
 
     def __init__(self, value: float) -> None:
         """Instantiate the differentiable float.
