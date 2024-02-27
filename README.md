@@ -12,24 +12,29 @@ Run `nox -s test` to check your code. If all checks pass move on to the `src/fit
 ```
 
 ``` math
-        y = x_1 + x_2 \\ 
-        \rightarrow \delta x_1 = \frac{\partial (x_1 + x_2)}{\partial x_1} \cdot \delta y = 1 \cdot \delta y \\
-        \rightarrow \delta x_2 = \frac{\partial (x_1 + x_2)}{\partial x_2} \cdot \delta y = 1 \cdot \delta y,
+    \begin{align}
+        y = x_1 + x_2 & \\ 
+        & \rightarrow \delta x_1 = \frac{\partial (x_1 + x_2)}{\partial x_1} \cdot \delta y = 1 \cdot \delta y \\
+        & \rightarrow \delta x_2 = \frac{\partial (x_1 + x_2)}{\partial x_2} \cdot \delta y = 1 \cdot \delta y
+    \end{align}
 ```
 
 
 ```math
-        y = x_1 \cdot x_2 \\ 
-        \rightarrow \delta x_1 = \frac{\partial (x_1 \cdot  x_2)}{\partial x_1} \cdot \delta y = x_2 \cdot \delta y \\
-        \rightarrow \delta x_2 = \frac{\partial (x_1 \cdot  x_2)}{\partial x_2} \cdot \delta y = x_1 \cdot \delta y,
-      \end{align}
-      with $\delta y$ as the inner derivative or seed value.
+    \begin{align}
+        y = x_1 \cdot x_2 & \\ 
+        & \rightarrow \delta x_1 = \frac{\partial (x_1 \cdot  x_2)}{\partial x_1} \cdot \delta y = x_2 \cdot \delta y \\
+        & \rightarrow \delta x_2 = \frac{\partial (x_1 \cdot  x_2)}{\partial x_2} \cdot \delta y = x_1 \cdot \delta y,
+    \end{align}
 ```
+with $\delta y$ as the inner derivative or seed value.
 
 
 ```math
-        y = f(x) \\
-                 \rightarrow \delta x = f'(x)\delta y .
+   \begin{align}
+        y = f(x) & \\
+                 & \rightarrow \delta x = f'(x)\delta y .
+   \end{align}
 ```
 
 ### Further reading:
