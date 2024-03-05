@@ -18,7 +18,7 @@ class ADiffFloat(object):
         a backward function.
 
         Args:
-            value (float): _description_
+            value (float): The value of the new object.
         """
         self.value = value
         self.partial = 0
@@ -38,7 +38,7 @@ class ADiffFloat(object):
         # TODO: Replace the line below.
         result = ADiffFloat(0.0)
         # TODO: Implement the addition of the two floats self and other.
-        # Set the self.backbard function
+        # Set the self.backward function
         # of the result such that both summands
         # end up with derivative information.
 
