@@ -1,4 +1,4 @@
-"""Fit a neuron to a classification problem."""
+"""Fit a simple multi layer perceptron to a classification problem."""
 
 import numpy as np
 from sklearn import datasets
@@ -16,11 +16,11 @@ def net(params, x):
                         (number of batches, number of in features).
     
     Returns:
-        list: A list of lists of "shape" [batch num, out neurons].
+        list[list]: A list of lists of "shape" [batch num, out neurons].
     """
     hidden_weights, hidden_biases, out_weights, out_biases = params
 
-    res = []
+    res = [[]]
 
     # TODO: run x through a hidden layer and an output layer.
     # Layers use the equation,
