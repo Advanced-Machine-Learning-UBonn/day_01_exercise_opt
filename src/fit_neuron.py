@@ -8,13 +8,13 @@ from autograd import ADiffFloat
 
 def net(params, x):
     """Evaluate a small neural network.
-    
+
     Args:
         params (tuple): A tuple containing (hidden layer weights, hidden layer biases,
                                             out layer weights, out layer biases).
         x (np.ndarray): A numpy array containing the input matrix of shape
                         (number of batches, number of in features).
-    
+
     Returns:
         list[list]: A list of lists of "shape" [batch num, out neurons].
     """

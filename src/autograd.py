@@ -10,7 +10,7 @@ class ADiffFloat(object):
         """Run a default backward function at the end of each path."""
         # Paths end here.
         # TODO 1: Sum up contributions.
-        self.partial += 0.
+        self.partial += 0.0
 
     def __init__(self, value: float) -> None:
         """Instantiate the differentiable float.
@@ -51,7 +51,7 @@ class ADiffFloat(object):
 
     def __mul__(self, other):
         """Overloads the multiplication (*) operator.
-        
+
         This function defines the result of the multiplication operation
         as well as the gradient flow through the backward function.
         """
