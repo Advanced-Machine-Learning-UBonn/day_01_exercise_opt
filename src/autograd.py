@@ -41,6 +41,8 @@ class ADiffFloat(object):
         # Set the self.backward function
         # of the result such that both summands
         # end up with derivative information.
+        # You could define a new function or implement
+        # a lambda function.
 
         return result
 
