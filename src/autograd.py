@@ -8,7 +8,8 @@ class ADiffFloat(object):
 
     def _backward(self, seed=1.0):
         """Run a default backward function at the end of each path."""
-        # Paths end here. TODO: Sum up contributions.
+        # Paths end here.
+        # TODO 1: Sum up contributions.
         self.partial += 0.
 
     def __init__(self, value: float) -> None:
@@ -32,28 +33,34 @@ class ADiffFloat(object):
             return other
 
     def __add__(self, other):
-        """Overloads the plus (+) operator."""
+        """Overloads the plus (+) operator.
+
+        This function defines the result of the addition operation
+        as well as the gradient flow through the backward function.
+        """
         other = self.wrap_other(other)
 
-        # TODO: Replace the line below.
+        # TODO 2: Replace the line below.
         result = ADiffFloat(0.0)
-        # TODO: Implement the addition of the two floats self and other.
+        # TODO 3: Implement the addition of the two floats self and other.
         # Set the self.backward function
         # of the result such that both summands
         # end up with derivative information.
-        # You could define a new function or implement
-        # a lambda function.
 
         return result
 
     def __mul__(self, other):
-        """Overloads the multiplication (*) operator."""
+        """Overloads the multiplication (*) operator.
+        
+        This function defines the result of the multiplication operation
+        as well as the gradient flow through the backward function.
+        """
         other = self.wrap_other(other)
 
-        # TODO: Replace the line below.
+        # TODO 4: Replace the line below.
         result = ADiffFloat(0.0)
-        # TODO: Implement multiplication of the two floats self and other.
-        # Set the self.backbard function
+        # TODO 5: Implement multiplication of the two floats self and other.
+        # Set the self.backward function
         # of the result such that gradient information
         # is backpropagated into both factors.
 
@@ -61,24 +68,24 @@ class ADiffFloat(object):
 
     def relu(self):
         """Implement backprop through a relu."""
-        # TODO: Implement a relu forward pass below.
-        # remeber relu(x) equals x if x > 0 else 0.
+        # TODO 6: Implement a relu forward pass below.
+        # Remember relu(x) equals x if x > 0 else 0.
         result = ADiffFloat(0.0)
 
-        # TODO: Set the backward function.
+        # TODO 7: Set the backward function.
         # Relus propagate gradient information if their value is > 0.
 
         return result
 
     def sigmoid(self):
         """Implement backprop through a sigmoid function."""
-        # TODO: Update the line below.
+        # TODO 8: Update the line below.
         result = ADiffFloat(0.0)
         # Remember the definition of the sigmoidal function:
         # sig(x) = 1.0 / (1 + exp(-x))
 
-        # TODO: Set the backprop function correctly.
-        # HINT: sig'(x) = sig(x) * (1 - _sig(x))
+        # TODO 9: Set the backprop function correctly.
+        # HINT: sig'(x) = sig(x) * (1 - sig(x))
         # Remember to apply the chain rule.
 
         return result
@@ -88,7 +95,7 @@ class ADiffFloat(object):
         return f"ADiffFloat(Val: {self.value:2.2f}, Partial: {self.partial:2.2f})"
 
     def __neg__(self):
-        """Multiplication with (1). Required for mse."""
+        """Multiplication with (1). Required for mean squared error."""
         return self * -1
 
     def __radd__(self, other):
