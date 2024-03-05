@@ -1,6 +1,6 @@
 # Understanding Autograd
 
-Thank you for taking our course. Completing the following tasks will prepare you for the exercise sessions in the coming weeks.
+Thank you for taking our course. Completing the following tasks will prepare you for the exercise sessions in the coming week.
 Consequently, we will use workstations running Ubuntu Linux. We highly recommend to use Linux systems instead of Windows.
 
 ## Task 0: Python and VSCode setup
