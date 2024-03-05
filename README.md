@@ -56,6 +56,7 @@ $$
 
 $\frac{\partial y_i}{\partial x_j}$ can be a chain of multiple elemental operations.
 
+You can now execute the script with `python src/fit_neuron.py`. If everything is implemented correctly, the training process should result in a test accuracy of 1.0 after 10 epochs. 
 
 ### Optional further reading:
 - Andreas Griewank, Andrea Walther, Evaluating Derivatives
