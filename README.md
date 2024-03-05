@@ -9,16 +9,9 @@ If you are unfamiliar with GitHub or our exercise setup you can follow Task 1 - 
 This exercise studies the implementation of an Algorithmic differentiation engine via operator overloading.
 
 Python supports overloading plus (+) and times (*) via the magic methods `__add__` and `__mul__`. Both are vital for this project.
-Navigate to the `src` folder. `TODO`s mark parts of the code that require your attention.
+Navigate to the `src` folder and open `src/autograd.py`. The `TODO`s mark parts of the code that require your attention.
 
-Run `nox -s test` to check your code. If all checks pass move on to the `src/fit_neuron.py` module. Resolve all `TODO`s.
-To do so recall that the multivariate chain rule requires as to sum up contributions from each path. More formally for an input $x_j$ we compute,
-
-$$
-    \delta x_j = \sum_i \frac{\partial y_i}{\partial x_j} \delta y_i.
-$$
-
-$\frac{\partial y_i}{\partial x_j}$ can be a chain of multiple elemental operations.
+Run `nox -s test` to check your code after implementing the class `ADiffFloat`. If all checks pass move on to the `src/fit_neuron.py` module.
 
 When overloading `__add__` please consider,
 
@@ -50,6 +43,18 @@ $$
                  & \rightarrow \delta x = f'(x)\delta y .
    \end{align}
 $$
+
+## Task 2: Gradient descent
+Now we want to use the autograd engine from the previous exercise to solve a simple optimisation problem using gradient descent. Move on to `src/fit_neuron.py` and resolve all `TODO`s.
+
+To do so recall that the multivariate chain rule requires as to sum up contributions from each path. More formally for an input $x_j$ we compute,
+
+$$
+    \delta x_j = \sum_i \frac{\partial y_i}{\partial x_j} \delta y_i.
+$$
+
+$\frac{\partial y_i}{\partial x_j}$ can be a chain of multiple elemental operations.
+
 
 ### Optional further reading:
 - Andreas Griewank, Andrea Walther, Evaluating Derivatives
