@@ -7,19 +7,31 @@ from autograd import ADiffFloat
 
 
 def net(params, x):
-    """Evaluate a small neural network."""
+    """Evaluate a small neural network.
+    
+    Args:
+        params (tuple): A tuple containing (hidden layer weights, hidden layer biases,
+                                            out layer weights, out layer biases).
+        x (np.ndarray): A numpy array containing the input matrix of shape
+                        (number of batches, number of in features).
+    
+    Returns:
+        list: A list of lists of "shape" [batch num, out neurons].
+    """
     hidden_weights, hidden_biases, out_weights, out_biases = params
 
-    res = ADiffFloat(0)
+    res = []
 
     # TODO: run x through a hidden layer and an output layer.
     # Layers use the equation,
-    # f(w^T x + b) .
+    # f(w^T x + b),
+    # where f is an activation function like ReLU or Sigmoiid.
     # Use element-wise products (*) and python's sum function
     # to compute the dot product (w^T x).
-    # You will require two for loops for each layer. A first loop
+    # You will require three for loops for each layer. A first loop
     # for the batch dimension and second loop which loops over the
-    # individual neurons weights and biases.
+    # individual neurons weights and biases and a third loop for the
+    # individual weight and input elements.
 
     return res
 
@@ -90,9 +102,10 @@ if __name__ == "__main__":
             print(f"e: {e:02.0f}, it: {i:02.0f}, cost value {cost.value:02.6f}")
 
             # update
-            # TODO: Update all weights via gradient descent.
-            # You need to subtract the product of learning-rate (lr) and partial
+            # TODO: Update all weights and biases via gradient descent.
+            # You need to subtract the product of learning rate (lr) and partial
             # from every weight value.
+            # Hint: Use lambda functions and map() if you're familiar with it.
 
     # testing...
     x_test = dataset[0][test_indices, :]
