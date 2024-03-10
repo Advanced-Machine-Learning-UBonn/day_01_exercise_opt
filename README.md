@@ -4,7 +4,7 @@ Thank you for taking our course. Completing the following tasks will prepare you
 Consequently, we will use workstations running Ubuntu Linux. We highly recommend to use Linux systems instead of Windows.
 
 ## Task 0: Python and VSCode setup
-If you are unfamiliar with GitHub or our exercise setup please follow Task 1 to 5 [here](https://github.com/Deep-Learning-with-Jax/day_01_exercise_intro).
+If you are unfamiliar with GitHub or our exercise setup please follow Task 1 to 5 [here](https://github.com/Machine-Learning-Foundations/day_01_exercise_intro/tree/main).
 
 ## Task 1: Operator overloading
 This exercise studies the implementation of an Algorithmic differentiation engine via operator overloading.
