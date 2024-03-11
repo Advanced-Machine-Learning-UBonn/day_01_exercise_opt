@@ -20,7 +20,7 @@ def net(params, x):
     """
     hidden_weights, hidden_biases, out_weights, out_biases = params
 
-    res = [[]]
+    res = []
 
     # TODO: run x through a hidden layer and an output layer.
     # Layers use the equation,
