@@ -48,7 +48,7 @@ $$
 ## Task 2: Gradient descent
 Now we want to use the autograd engine from the previous exercise to solve a simple optimisation problem using gradient descent. Move on to `src/fit_neuron.py` and resolve all `TODO`s.
 
-To do so recall that the multivariate chain rule requires as to sum up contributions from each path. More formally for an input $x_j$ we compute,
+To do so recall that the multivariate chain rule requires us to sum up contributions from each path. More formally for an input $x_j$ we compute,
 
 $$
     \delta x_j = \sum_i \frac{\partial y_i}{\partial x_j} \delta y_i.
