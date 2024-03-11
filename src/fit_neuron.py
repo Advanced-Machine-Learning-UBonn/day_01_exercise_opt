@@ -25,7 +25,7 @@ def net(params, x):
     # TODO: run x through a hidden layer and an output layer.
     # Layers use the equation,
     # f(w^T x + b),
-    # where f is an activation function like ReLU or Sigmoiid.
+    # where f is an activation function like ReLU or Sigmoid.
     # Use element-wise products (*) and python's sum function
     # to compute the dot product (w^T x).
     # You will require three for loops for each layer. A first loop
