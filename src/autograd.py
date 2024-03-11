@@ -43,7 +43,7 @@ class ADiffFloat(object):
         # TODO 2: Replace the line below.
         result = ADiffFloat(0.0)
         # TODO 3: Implement the addition of the two floats self and other.
-        # Set the self.backward function
+        # Set the backward function
         # of the result such that both summands
         # end up with derivative information.
 
