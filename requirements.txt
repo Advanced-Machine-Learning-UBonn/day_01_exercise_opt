@@ -1,3 +1,5 @@
 nox
 numpy
 matplotlib
+pytest
+nox
